@@ -29,28 +29,31 @@ returns JSON Object:
     "end-points": [
         "api/collection" : {
             "methods": [
-                "GET": {
-                    "returns": "All Collections",
-                    "Format": "JSON"
+                "get": {
+                    "returns": "collection",
+                    "Format": "json"
                 }
             ]
         },
         "api/collection/:id": {
             "methods": [
-                "GET": {
-                    "returns": "A specific deck",
-                    "format": "JSON"
+                "get": {
+                    "response": "resource",
+                    "format": "json"
                 },
-                "POST": {
-                    "returns": "the newly created deck",
-                    "format": "JSON",
+                "post": {
+                    "request": "resource",
+                    "response": "resource",
+                    "format": "json",
                     "authorize": [
-                        "who": "Admin Name",
-                        "method": "Header"
+                        {
+                        "name": "Admin Name",
+                        "method": "header key"
+                        }
                     ]
                 },
-                "PUT": {},
-                "DELETE": {}
+                "put": {},
+                "delete": {}
             ]
         }
     ]
