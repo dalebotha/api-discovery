@@ -24,28 +24,29 @@ returns JSON Object:
 ```javascript
 
 {
-    "api-name": "devs-decks",
+    "api-name": "<api-name>",
     "version": 0.1,
-    "end-points: [
-        "api/decks" : {
-            Methods: [
+    "end-points": [
+        "api/collection" : {
+            "methods": [
                 "GET": {
-                    "returns": "All Dev's Decks",
+                    "returns": "All Collections",
                     "Format": "JSON"
                 }
             ]
         },
-        "api/decks/:id": {
-            Methods: [
+        "api/collection/:id": {
+            "methods": [
                 "GET": {
-                    "returns":"A specific deck",
-                    "format":"JSON"
+                    "returns": "A specific deck",
+                    "format": "JSON"
                 },
                 "POST": {
-                    "returns":"the newly created deck",
-                    "format":"JSON",
-                    "authorize":[
-                        "me","Dev"
+                    "returns": "the newly created deck",
+                    "format": "JSON",
+                    "authorize": [
+                        "who": "Admin Name",
+                        "method": "Header"
                     ]
                 },
                 "PUT": {},
