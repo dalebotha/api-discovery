@@ -1,8 +1,7 @@
 const api_disc = [
     {  
-        "api-name":"API name",
-        "version":"1.0",
-        "isCurrent":true,
+        "api-name":"<api-name>",
+        "version":1.0,
         "end-points":{  
            "api/collection":{  
               "methods":{  
@@ -34,11 +33,10 @@ const api_disc = [
         }
      },
     {
-        "api-name": "API name",
-        "version": "0.1",
-        "isCurrent": false,
+        "api-name": "<api-name>",
+        "version": 0.1,
         "end-points": {
-            "api/collection/" : {
+            "api/collection" : {
                 "methods": {
                     "get": {
                         "response": "collection",

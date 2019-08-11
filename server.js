@@ -8,7 +8,7 @@ const app = new express();
 
 app.use(helmet());
 //app.use(express.json());
-app.use('/api/disc',api_router);
+app.use('/api',api_router);
 
 const port = process.env.port || 3000;
 

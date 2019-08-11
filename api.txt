@@ -1,1 +1,2 @@
 /api/disc
+/api/disc/:ver

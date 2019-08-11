@@ -12,6 +12,7 @@ API discovery file giving the only discovery API end-point:
 /api.txt
 ```
 /api/disc
+/api/dics/:ver
 ```
 ## API Discovery for public end-points
 * GET /api/disc
@@ -22,41 +23,43 @@ API discovery file giving the only discovery API end-point:
 * PUT /api/disc/:ver
 * DELETE /api/disc/:ver
 
-
 Public End-points:
 ```javascript
-{  
-   "api-name":"<api-name>",
-   "version":1.0,
-   "end-points":{  
-      "api/collection":{  
-         "methods":{  
-            "get":{  
-               "response":"collection",
-               "format":"json",
-               "example":"{'key':'value'}"
-            }
-         }
-      },
-      "api/collection/:id":{  
-         "methods":{  
-            "get":{  
-               "request":{  
-                  "params":{  
-                     "name":"id",
-                     "format":"ObjectId",
-                     "example":"507f1f77bcf86cd799439011"
-                  }
-               },
-               "response":{  
-                  "type":"resource",
-                  "format":"json",
-                  "example":"{key:value}"
-               }
-            }
-         }
-      }
-   }
-}
+[
+    {  
+        "api-name":"API name",
+        "version":"1.0",
+        "isCurrent":true,
+        "end-points":{  
+           "api/collection":{  
+              "methods":{  
+                 "GET":{  
+                    "response":"collection",
+                    "format":"json",
+                    "example":"{'key':'value'}"
+                 }
+              }
+           },
+           "api/collection/:id":{  
+              "methods":{  
+                 "GET":{  
+                    "request":{  
+                       "params":{  
+                          "name":"id",
+                          "format":"ObjectId",
+                          "example":"507f1f77bcf86cd799439011"
+                       }
+                    },
+                    "response":{  
+                       "type":"resource",
+                       "format":"json",
+                       "example":"{key:value}"
+                    }
+                 }
+              }
+           }
+        }
+    }
+]
 ```
 
