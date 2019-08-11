@@ -1,0 +1,25 @@
+{
+  "name": "api-discovery",
+  "version": "1.0.0",
+  "description": "This is specification for a simple API to an API. It starts with a api.txt file in the root.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalebotha/api-discovery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dalebotha/api-discovery/issues"
+  },
+  "homepage": "https://github.com/dalebotha/api-discovery#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^3.20.0",
+    "lodash": "^4.17.15"
+  }
+}

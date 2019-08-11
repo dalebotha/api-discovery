@@ -13,75 +13,50 @@ API discovery file giving the only discovery API end-point:
 ```
 /api/disc
 ```
-## API Discovery End-points
+## API Discovery for public end-points
 * GET /api/disc
 * GET /api/disc/:ver
 
-* POST /api/disc/:ver    <dev>
-* PUT /api/disc/:ver     <dev>
-* DELETE /api/disc/:ver  <dev>
+## API Discovery for private end-points
+* POST /api/disc/:ver
+* PUT /api/disc/:ver
+* DELETE /api/disc/:ver
 
 
-returns JSON Object:
+Public End-points:
 ```javascript
-
-{
-    "api-name": "<api-name>",
-    "version": 0.1,
-    "end-points": [
-        "api/collection" : {
-            "methods": [
-                "get": {
-                    "response": "collection",
-                    "format": "json",
-                    "example": "{'key':'value'}"
-                }
-            ]
-        },
-        "api/collection/:id": {
-            "methods": [
-                "get": {
-                    "request": {
-                        "params": {
-                            "name":"id",
-                            "format":"ObjectId",
-                            "example": 507f1f77bcf86cd799439011
-                        }
-                    },
-                    "response": {
-                        ""
-                        "type": "resource",
-                        "format": "json",
-                        "example":"{key:value}"
-                    },   
-                },
-                "post": {
-                    "request": {
-                        "params": {
-                            "name":"id",
-                            "format":"ObjectId",
-                            "example": 507f1f77bcf86cd799439011
-                        },
-                        "type": "resource",
-                        "format": "json",
-                        "example":"{'key':'value'}"
-                        "authorize": {
-                            "name": "user",
-                            "method": "http request header",
-                            "format": "'auth-key':value",
-                            "example":"{'auth-key':507f191e810c19729de860ea}"
-                        }
-                    },
-                    "response": {
-                        "type": "resource",
-                        "format": "json",
-                        "example":"{'key':'value'}"
-                    }
-                },
-                "put": {},
-                "delete": {}
-            ]
-        }
-    ]
+{  
+   "api-name":"<api-name>",
+   "version":1.0,
+   "end-points":{  
+      "api/collection":{  
+         "methods":{  
+            "get":{  
+               "response":"collection",
+               "format":"json",
+               "example":"{'key':'value'}"
+            }
+         }
+      },
+      "api/collection/:id":{  
+         "methods":{  
+            "get":{  
+               "request":{  
+                  "params":{  
+                     "name":"id",
+                     "format":"ObjectId",
+                     "example":"507f1f77bcf86cd799439011"
+                  }
+               },
+               "response":{  
+                  "type":"resource",
+                  "format":"json",
+                  "example":"{key:value}"
+               }
+            }
+         }
+      }
+   }
 }
 ```
+
